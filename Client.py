@@ -17,7 +17,7 @@ try:
 		print ('waiting to receive', sys.stderr)
 		data, server = sock.recvfrom(4096)
 		
-		print >>sys.stderr, 'I have to send "%s"' % data
+		print ('I have to send "%s"' % data, sys.stderr)
 		while str(data) != '9':
 		
 			message = data
