@@ -10,11 +10,11 @@ message = '0'
 try:
 	
     # Send data
-		print >>sys.stderr, 'sending "%s"' % message
+		print ('sending "%s"' % message, file=sys.stderr)
 		sent = sock.sendto(message, server_address)
 
     # Receive response
-		print >>sys.stderr, 'waiting to receive'
+		print ('waiting to receive', sys.stderr)
 		data, server = sock.recvfrom(4096)
 		
 		print >>sys.stderr, 'I have to send "%s"' % data
@@ -26,11 +26,11 @@ try:
 		    
 			data, server = sock.recvfrom(4096)
 		
-			print >>sys.stderr, 'I have to send "%s"' % data
+			print ('I have to send "%s"' % data, sys.stderr)
 		
 			
 
 finally:
-    print >>sys.stderr, 'closing socket'
+    print ('closing socket', sys.stderr)
 raw_input()
 sock.close()
